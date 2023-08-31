@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Page() {
     return (
         <main>
-            <div className="mt-10 flex flex-col md:flex-row justify-center items-center gap-10">
+            <div className="mt-10 flex flex-col lg:flex-row justify-center items-center gap-10">
                 <SignIn />
                 <div className="flex flex-col justify-center items-center">
                     <Image
@@ -26,6 +26,7 @@ export default function Page() {
                     <li className="mx-5 mt-5 lg:text-lg">Join a community dedicated to helping the newer generation of firefighter achieve their dreams</li>
                     <li className="mx-5 mt-5 lg:text-lg">Post questions about anything you are curious about or is confusing to you with no judgement</li>
                     <li className="mx-5 mt-5 lg:text-lg">Read insightful answers from successful recruits who have been hired and read about their journey</li>
+                    <li className="mx-5 mt-5 lg:text-lg">Converse with fellow firefighters to gain valuable advice for your first day on the job</li>
                 </ul>
             </div>
 
