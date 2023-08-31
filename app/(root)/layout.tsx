@@ -1,6 +1,7 @@
 import '../../styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ClerkProvider, UserButton } from '@clerk/nextjs'
 
 const inter = Inter( { subsets: ['latin'] } )
 
@@ -15,10 +16,12 @@ export default function RootLayout( {
     children: React.ReactNode
 } ) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body className={inter.className}>
+                    <UserButton afterSignOutUrl='/sign-in' />
+                </body>
+            </html>
+        </ClerkProvider>
     )
 }
