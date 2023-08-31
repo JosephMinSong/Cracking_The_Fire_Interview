@@ -1,0 +1,12 @@
+.cl-card {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cl-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -15,13 +15,10 @@ export default function RootLayout( {
     children: React.ReactNode
 } ) {
     return (
-        <ClerkProvider>
-            <html lang="en">
-                <body className={inter.className}>
+        <html lang="en">
+            <body className={inter.className}>
 
-                </body>
-            </html>
-
-        </ClerkProvider>
+            </body>
+        </html>
     )
 }
