@@ -2,6 +2,8 @@ import '../../styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ClerkProvider, UserButton } from '@clerk/nextjs'
+import Footer from '@/components/Footer'
+import NavBar from '@/components/NavBar'
 
 const inter = Inter( { subsets: ['latin'] } )
 
@@ -19,7 +21,10 @@ export default function RootLayout( {
         <ClerkProvider>
             <html lang="en">
                 <body className={inter.className}>
-                    <UserButton afterSignOutUrl='/sign-in' />
+                    <NavBar />
+                    {/* <LeftBar />
+                    <RightBar /> */}
+                    <Footer />
                 </body>
             </html>
         </ClerkProvider>

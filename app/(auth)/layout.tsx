@@ -1,7 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs"
 import { Inter } from "next/font/google"
 import '../../styles/globals.css'
-import Footer from "@/components/general/Footer"
+import Footer from "@/components/Footer"
 import Header from "@/components/auth/Header"
 
 export const metadata = {
