@@ -34,10 +34,14 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="description-container mt-12 lg:mx-52">
+            <div className="description-container mt-12 lg:mx-52 rounded-lg p-5">
                 <h1 className="font-open-sans text-2xl font-bold mx-5 p-2 lg:text-3xl">Learn more about the firefighter interview process</h1>
                 <hr />
-                <h2 className="mx-5 mt-5 lg:text-lg">Join a community dedicated to helping the newer generation of firefighter achieve their dreams.</h2>
+                <ul>
+                    <li className="mx-5 mt-5 lg:text-lg">Join a community dedicated to helping the newer generation of firefighter achieve their dreams</li>
+                    <li className="mx-5 mt-5 lg:text-lg">Post questions about anything you are curious about or is confusing to you with no judgement</li>
+                    <li className="mx-5 mt-5 lg:text-lg">Read insightful answers from successful recruits who have been hired and read about their journey</li>
+                </ul>
             </div>
 
         </main>
