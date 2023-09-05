@@ -22,9 +22,18 @@ export default function RootLayout( {
             <html lang="en">
                 <body className={inter.className}>
                     <NavBar />
-                    {/* <LeftBar /> */}
-                    {children}
-                    {/* <RightBar /> */}
+
+                    <main>
+                        {/* <LeftBar /> */}
+
+                        <section className='main-container max-md:pb-32 sm:px-10'>
+                            <div className='w-full max-w-4xl'>
+                                {children}
+                            </div>
+                        </section>
+
+                        {/* <RightBar /> */}
+                    </main>
                     <Footer />
                 </body>
             </html>
