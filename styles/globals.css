@@ -28,3 +28,13 @@
 .searchbar {
     background-color: rgba(251, 146, 60, 0.2);
 }
+
+body {
+    background-color: rgba(251, 146, 60, 0.05);
+}
+
+.createpostbutton:hover,
+.notificationbutton:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
