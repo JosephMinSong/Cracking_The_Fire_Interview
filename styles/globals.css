@@ -41,8 +41,7 @@ body {
     @apply md:h-1/2
 }
 
-.createpostbutton:hover,
-.notificationbutton:hover,
+.navbutton:hover,
 .sidebar_link:hover {
     cursor: pointer;
     opacity: 80%;
