@@ -34,11 +34,16 @@ body {
 }
 
 .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center px-6 pb-10 pt-28;
+    @apply flex min-h-screen flex-1 flex-col items-center px-6 pb-10 pt-20;
+}
+
+.navbutton{
+    @apply md:h-1/2
 }
 
 .createpostbutton:hover,
-.notificationbutton:hover {
+.notificationbutton:hover,
+.sidebar_link:hover {
     cursor: pointer;
     opacity: 80%;
 }

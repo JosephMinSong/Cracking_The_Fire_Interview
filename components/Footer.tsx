@@ -10,7 +10,7 @@ export default function Footer() {
                 alt="Copyright icon"
                 className="rounded-lg"
             />
-            <h1>2023 Joseph Song | All rights reserved</h1>
+            <h1 className="text-xs md:text-base">2023 Cracking the Fire Interview | All rights reserved</h1>
         </div>
     )
 }
