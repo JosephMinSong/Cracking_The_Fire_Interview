@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { ClerkProvider, UserButton } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
+import Rightbar from '@/components/Rightbar'
 
 const inter = Inter( { subsets: ['latin'] } )
 
@@ -24,7 +25,6 @@ export default function RootLayout( {
                     <NavBar />
 
                     <main>
-                        {/* <LeftBar /> */}
 
                         <section className='main-container max-md:pb-32 sm:px-10'>
                             <div className='w-full max-w-4xl'>
@@ -32,7 +32,7 @@ export default function RootLayout( {
                             </div>
                         </section>
 
-                        {/* <RightBar /> */}
+                        <Rightbar />
                     </main>
                     <Footer />
                 </body>

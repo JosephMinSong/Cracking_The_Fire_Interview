@@ -42,3 +42,7 @@ body {
     cursor: pointer;
     opacity: 80%;
 }
+
+/* .footer {
+    @apply fixed bottom-0 z-10 w-full rounded-t-3xl p-4 backdrop-blur-lg sm:px-6 md:hidden;
+} */
