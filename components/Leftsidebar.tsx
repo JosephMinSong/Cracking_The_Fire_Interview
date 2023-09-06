@@ -14,7 +14,7 @@ export default function Leftbar() {
                     >
                         <div className='flex justify-between items-center text-center gap-6'>
                             {link.icon}
-                            <span className='flex w-full justify-center items-center'>{link.label}</span>
+                            <span className='flex w-full justify-center items-center font-semibold'>{link.label}</span>
                         </div>
                     </Link>
                 ) )}
