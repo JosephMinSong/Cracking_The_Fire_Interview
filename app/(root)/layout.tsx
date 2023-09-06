@@ -1,10 +1,10 @@
 import '../../styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ClerkProvider, UserButton } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
-import Rightbar from '@/components/Rightbar'
+import Leftsidebar from '@/components/Leftsidebar'
 
 const inter = Inter( { subsets: ['latin'] } )
 
@@ -24,7 +24,9 @@ export default function RootLayout( {
                 <body className={inter.className}>
                     <NavBar />
 
-                    <main>
+                    <main className='flex'>
+
+                        <Leftsidebar />
 
                         <section className='main-container max-md:pb-32 sm:px-10'>
                             <div className='w-full max-w-4xl'>
@@ -32,7 +34,6 @@ export default function RootLayout( {
                             </div>
                         </section>
 
-                        <Rightbar />
                     </main>
                     <Footer />
                 </body>
