@@ -24,12 +24,12 @@ export default function RootLayout( {
                 <body className={inter.className}>
                     <NavBar />
 
-                    <main className='flex'>
+                    <main className='flex pl-10'>
 
                         <Leftsidebar />
 
                         <section className='main-container max-md:pb-32 sm:px-10'>
-                            <div className='w-full max-w-4xl'>
+                            <div className='w-full max-w-5xl'>
                                 {children}
                             </div>
                         </section>
