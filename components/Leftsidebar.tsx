@@ -22,7 +22,7 @@ export default function Leftbar() {
                             <Link
                                 href={link.route}
                                 key={i}
-                                className={`sidebar_link p-3 rounded-lg ${isActive && 'bg-red'}`}
+                                className={`sidebar_link p-3 rounded-lg ${isActive && 'bg-greyBackground'}`}
                             >
                                 <div className='flex justify-between items-center text-center gap-2 lg:gap-6'>
                                     {link.icon}

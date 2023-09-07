@@ -16,7 +16,9 @@ const config: Config = {
             'cyan': '#67e8f9',
             'green': '#34d399',
             'gray': '#9ca3af',
-            'white': '#ffffff'
+            'white': '#ffffff',
+            'redBackground': '#fecaca',
+            'greyBackground': '#d4d4d4'
         },
         fontFamily: {
             'roboto': ['Roboto', 'sans-serif'],
