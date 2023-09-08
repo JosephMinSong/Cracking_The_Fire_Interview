@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import '../../styles/globals.css'
 import Footer from "@/components/Footer"
 import Header from "@/components/auth/Header"
+import Head from "next/head"
 
 export const metadata = {
     title: "Cracking the Fire Interview",
@@ -15,6 +16,14 @@ export default function RootLayout( { children }: { children: React.ReactNode } 
     return (
         <ClerkProvider>
             <html lang="en">
+                <Head>
+                    <link
+                        rel="icon"
+                        href="/icon?<generated>"
+                        type="image/<generated>"
+                        sizes="<generated"
+                    />
+                </Head>
                 <body className={`${inter.className}`}>
                     <Header />
                     {children}
