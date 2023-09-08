@@ -46,11 +46,16 @@ body {
 }
 
 .navbutton:hover,
-.sidebar_link:hover {
+.sidebar_link:hover,
+.submit-button:hover {
     cursor: pointer;
     opacity: 80%;
 }
 
 .dropdown{
     @apply absolute right-0 top-14 mt-3 w-1/4 p-5 rounded-lg bg-white min-w-[175px] flex flex-col gap-2 justify-end items-end z-20
+}
+
+.submit-button{
+    @apply bg-orange
 }

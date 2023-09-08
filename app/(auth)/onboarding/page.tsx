@@ -17,11 +17,11 @@ export default async function Page() {
     }
 
     return (
-        <main className="flex justify-center items-center">
+        <main className="flex justify-center items-center text-center">
             <div className="inline-block mt-6">
                 <h1 className="text-xl lg:text-3xl font-extrabold">Introduce yourself to the crew!</h1>
 
-                <section className="mt-10">
+                <section className="mt-10 rounded-2xl bg-strongOrangeBackground p-10">
                     <AccountProfile user={user} btnTitle="Continue" />
                 </section>
             </div>

@@ -40,6 +40,7 @@ interface Props {
         objectId: string,
         username: string,
         bio: string,
+        status: string,
         image: string
     },
     btnTitle: string
@@ -50,9 +51,10 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
     const form = useForm<z.infer<typeof UserValidation>>( {
         resolver: zodResolver( UserValidation ),
         defaultValues: {
-            profile_photo: "",
-            username: "",
-            bio: "",
+            profile_photo: user?.image || "",
+            username: user?.username || "",
+            status: user?.status || "",
+            bio: user?.bio || "",
         }
     } )
 
@@ -68,13 +70,13 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit( onSubmit )}
-                className="flex flex-col justify-start gap-10">
+                className="flex flex-col gap-10">
                 {/* Profile Picture */}
                 <FormField
                     control={form.control}
                     name="profile_photo"
                     render={( { field } ) => (
-                        <FormItem className="flex justify-center items-center gap-5">
+                        <FormItem className="flex items-center gap-5">
                             <FormLabel className="account-form_image-label">
                                 {field.value ? (
                                     <Image
@@ -89,21 +91,26 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                     <Image
                                         src="/profile.svg"
                                         alt="profile photo"
-                                        width={96}
-                                        height={96}
+                                        width={45}
+                                        height={45}
                                         priority
                                         className="rounded-lg object-contain"
                                     />
                                 )}
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold">
-                                <Input
-                                    type="file"
-                                    accept="image/*"
-                                    placeholder="Upload a photo"
-                                    onChange={( e ) => handleImage( e, field.onChange )}
-                                />
-                            </FormControl>
+                            <div className="flex flex-col justify-start items-start gap-1">
+                                <FormControl className="flex-1 text-base-semibold">
+                                    <Input
+                                        type="file"
+                                        accept="image/*"
+                                        placeholder="Upload a photo"
+                                        onChange={( e ) => handleImage( e, field.onChange )}
+                                    />
+                                </FormControl>
+                                <FormDescription>
+                                    This will be your profile picture
+                                </FormDescription>
+                            </div>
                         </FormItem>
                     )}
                 />
@@ -113,14 +120,15 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                     control={form.control}
                     name="username"
                     render={( { field } ) => (
-                        <FormItem className="flex justify-center items-center gap-5 w-full">
+                        <FormItem className="flex flex-col justify-start items-start gap-1 w-full">
                             <FormLabel className="text-base-semibold">
-                                Name
+                                Username
                             </FormLabel>
                             <FormControl className="flex-1 text-base-semibold">
                                 <Input
                                     type="text"
                                     className="account-form_input no-focus"
+                                    placeholder="Your new username"
                                     {...field}
                                 />
                             </FormControl>
@@ -133,7 +141,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                     control={form.control}
                     name="status"
                     render={( { field } ) => (
-                        <FormItem className="flex justify-center items-center gap-5 w-full">
+                        <FormItem className="flex flex-col justify-start items-start gap-1 w-full">
                             <FormLabel>Current Status: </FormLabel>
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
@@ -159,21 +167,21 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                     control={form.control}
                     name="bio"
                     render={( { field } ) => (
-                        <FormItem className="flex justify-center items-center gap-5 w-full">
+                        <FormItem className="flex flex-col justify-start items-start gap-1 w-full">
                             <FormLabel className="text-base-semibold">
                                 Bio
                             </FormLabel>
                             <FormControl className="flex-1 text-base-semibold">
                                 <Textarea
                                     placeholder="Add anything that you want to share!"
+
+                                    {...field}
                                 />
                             </FormControl>
                         </FormItem>
                     )}
                 />
-
-
-                <Button type="submit">{btnTitle}</Button>
+                <Button type="submit" className="submit-button">{btnTitle}</Button>
             </form>
         </Form>
     )

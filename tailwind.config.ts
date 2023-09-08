@@ -26,7 +26,8 @@ const config: Config = {
             'gray': '#9ca3af',
             'white': '#ffffff',
             'redBackground': '#fecaca',
-            'greyBackground': '#d4d4d4'
+            'greyBackground': '#d4d4d4',
+            'strongOrangeBackground': '#fed7aa'
         },
         fontFamily: {
             'roboto': ['Roboto', 'sans-serif'],
