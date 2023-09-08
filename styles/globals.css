@@ -59,3 +59,11 @@ body {
 .submit-button{
     @apply bg-orange
 }
+
+.account-form_image-label {
+    @apply cursor-pointer flex h-24 w-24 items-center justify-center rounded-full !important;
+}
+
+.account-form_image-input {
+    @apply cursor-pointer border-none outline-none file:text-blue !important;
+}
