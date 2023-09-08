@@ -24,7 +24,7 @@ export default function RootLayout( {
                 <body className={inter.className}>
                     <NavBar />
 
-                    <main className='flex pl-10'>
+                    <main className='flex'>
 
                         <Leftsidebar />
 

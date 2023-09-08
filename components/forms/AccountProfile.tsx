@@ -39,13 +39,31 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
         }
     } )
 
-    const handleSubmit = ( values: z.infer<typeof UserValidation> ) => {
+    function onSubmit( values: z.infer<typeof UserValidation> ) {
         console.log( values )
     }
 
     return (
-        <Form>
-
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit( onSubmit )} className="space-y-8">
+                <FormField
+                    control={form.control}
+                    name="profile_photo"
+                    render={( { field } ) => (
+                        <FormItem>
+                            <FormLabel>Username</FormLabel>
+                            <FormControl>
+                                <Input placeholder="shadcn" {...field} />
+                            </FormControl>
+                            <FormDescription>
+                                This is your public display name.
+                            </FormDescription>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <Button type="submit">Submit</Button>
+            </form>
         </Form>
     )
 }

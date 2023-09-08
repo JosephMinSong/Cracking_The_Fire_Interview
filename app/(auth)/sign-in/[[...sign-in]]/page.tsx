@@ -1,5 +1,4 @@
 import { SignIn } from "@clerk/nextjs";
-import '../../../../styles/signin.css'
 
 import Image from "next/image";
 

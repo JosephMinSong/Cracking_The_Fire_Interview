@@ -17,7 +17,7 @@ export default async function Page() {
 
     return (
         <main>
-            <div className="flex justify-center mt-10">
+            <div className="flex flex-col lg:flex-row justify-center mt-5 mx-10">
                 <h1 className="text-xl font-bold">Introduce yourself to the crew!</h1>
 
                 <section>
