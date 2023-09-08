@@ -23,7 +23,12 @@ export default function RootLayout( {
         <ClerkProvider>
             <html lang="en">
                 <Head>
-                    <link rel="icon" href="/favicon.ico" sizes="any" />
+                    <link
+                        rel="icon"
+                        href="/icon?<generated>"
+                        type="image/<generated>"
+                        sizes="<generated"
+                    />
                 </Head>
                 <body className={inter.className}>
                     <NavBar />
