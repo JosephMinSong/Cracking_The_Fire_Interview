@@ -10,7 +10,9 @@ export const connectToDB = async () => {
     if ( isConnected ) return console.log( "Already connected to MongoDB" )
 
     try {
-        await mongoose.connect( process.env.MONGODB_URL );
+        await mongoose.connect( process.env.MONGODB_URL, {
+            dbName: 'cracking_the_fire_interview_DB'
+        } );
 
         isConnected = true;
 
