@@ -24,6 +24,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { usePathname, useRouter } from "next/navigation"
 import { PostValidation } from "@/lib/validations/post"
 
+import { createPost } from "@/lib/actions/post.actions"
+
 export default function PostForm( { userId }: { userId: string } ) {
     const router = useRouter();
     const pathname = usePathname();
@@ -37,11 +39,22 @@ export default function PostForm( { userId }: { userId: string } ) {
         }
     } )
 
+    const onSubmit = async ( values: z.infer<typeof PostValidation> ) => {
+        await createPost( {
+            title: values.title,
+            post: values.post,
+            author: userId,
+            path: pathname
+        } )
+
+        router.push( "/" )
+    }
+
     return (
         <Form {...form}>
             <h1 className="text-2xl font-bold">Create a new post</h1>
             <form
-                // onSubmit={form.handleSubmit( onSubmit )}
+                onSubmit={form.handleSubmit( onSubmit )}
                 className="flex flex-col gap-10 mt-5">
                 {/* Username */}
                 <FormField
@@ -74,7 +87,7 @@ export default function PostForm( { userId }: { userId: string } ) {
                             <FormLabel className="text-base-semibold">
                                 Post
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold">
+                            <FormControl className="flex-1 text-base-semibold no-focus">
                                 <Textarea
                                     placeholder="Your post here..."
                                     rows={20}
