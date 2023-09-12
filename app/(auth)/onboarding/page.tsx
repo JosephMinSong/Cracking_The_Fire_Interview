@@ -1,11 +1,15 @@
 import AccountProfile from "@/components/forms/AccountProfile"
+import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs"
+import { redirect } from "next/navigation";
 
 export default async function Page() {
 
     const user = await currentUser();
+    if ( !user ) return null;
 
-    const userInfo = {};
+    const userInfo = await fetchUser( user.id );
+    // if ( userInfo?.onboarded ) redirect( "/" )
 
     const userData = {
         id: user?.id,
@@ -22,7 +26,7 @@ export default async function Page() {
                 <h1 className="text-xl lg:text-3xl font-extrabold">Introduce yourself to the crew!</h1>
 
                 <section className="mt-10 rounded-2xl bg-strongOrangeBackground p-10">
-                    <AccountProfile user={user} btnTitle="Continue" />
+                    <AccountProfile user={userData} btnTitle="Continue" />
                 </section>
             </div>
         </main>

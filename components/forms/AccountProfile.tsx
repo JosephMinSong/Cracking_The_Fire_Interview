@@ -238,7 +238,6 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                             <FormControl className="flex-1 text-base-semibold">
                                 <Textarea
                                     placeholder="Add anything that you want to share!"
-
                                     {...field}
                                 />
                             </FormControl>
