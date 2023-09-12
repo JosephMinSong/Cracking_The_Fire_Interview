@@ -90,18 +90,23 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
     }
 
     const onSubmit = async ( values: z.infer<typeof UserValidation> ) => {
+        // checking to see if we need to upload a new profile pic
         const blob = values.profile_photo;
 
+        // importing change function from utils.ts
         const hasImageChanged = isBase64Image( blob );
 
+        // if the image has changed, then we call uploadthing to upload a new file
         if ( hasImageChanged ) {
             const imgRes = await startUpload( files )
 
+            // and then set the new uploaded file to our profile photo
             if ( imgRes && imgRes[0].url ) {
                 values.profile_photo = imgRes[0].url;
             }
         }
 
+        // importing updateUser from user.actions.ts
         await updateUser( {
             image: values.profile_photo,
             username: values.username,
@@ -111,6 +116,8 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
             path: pathname
         } )
 
+        // if we are in the edit page, then go back to where we came from
+        // else, we go to the home page
         if ( pathname === '/profile/edit' ) {
             router.back();
         } else {
@@ -123,6 +130,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
             <form
                 onSubmit={form.handleSubmit( onSubmit )}
                 className="flex flex-col gap-10">
+
                 {/* Profile Picture */}
                 <FormField
                     control={form.control}
@@ -160,6 +168,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                         className="account-form_image-input"
                                     />
                                 </FormControl>
+                                <FormMessage />
                                 <FormDescription>
                                     This will be your profile picture
                                 </FormDescription>
@@ -185,6 +194,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -202,6 +212,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                         <SelectValue placeholder="Select where you are in the process" />
                                     </SelectTrigger>
                                 </FormControl>
+                                <FormMessage />
                                 <SelectContent>
                                     <SelectItem value="curious">I'm just curious about the process</SelectItem>
                                     <SelectItem value="preparing">I'm preparing for the exams and interviews</SelectItem>
@@ -231,6 +242,7 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
