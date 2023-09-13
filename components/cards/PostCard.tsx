@@ -30,7 +30,7 @@ export default function PostCard( {
 }: Props ) {
     return (
         <article className="postcard">
-            <h1>{id}</h1>
+            <h1>{author.image}</h1>
             <div>
                 <h1>{title}</h1>
             </div>
