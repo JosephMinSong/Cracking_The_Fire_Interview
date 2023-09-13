@@ -1,3 +1,5 @@
+import { formatDateString } from "@/lib/utils"
+
 interface Props {
     id: string,
     currentUserId: string,
@@ -16,6 +18,7 @@ interface Props {
     }[],
 }
 
+
 export default function PostCard( {
     id,
     currentUserId,
@@ -26,9 +29,13 @@ export default function PostCard( {
     comments,
 }: Props ) {
     return (
-        <article>
-            <h2>{title}</h2>
-            <h2>{content}</h2>
+        <article className="postcard">
+            <h1>{id}</h1>
+            <div>
+                <h1>{title}</h1>
+            </div>
+            <p>{content}</p>
+            <p>{formatDateString( createdAt )}</p>
         </article>
     )
 }

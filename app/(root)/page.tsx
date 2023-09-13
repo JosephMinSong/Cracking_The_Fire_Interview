@@ -15,7 +15,7 @@ export default async function Page() {
             {result.posts.length === 0 ? (
                 <p>No posts found</p>
             ) : (
-                <>
+                <div className="postcard_container w-full max-w-5xl">
                     {result.posts.map( ( post ) => (
                         <PostCard
                             key={post._id}
@@ -23,12 +23,12 @@ export default async function Page() {
                             currentUserId={user?.id || ""}
                             title={post.title}
                             content={post.post}
-                            author={post.author}
+                            author={post.author.name}
                             createdAt={post.createdAt}
                             comments={post.children}
                         />
                     ) )}
-                </>
+                </div>
             )}
         </section>
     )
