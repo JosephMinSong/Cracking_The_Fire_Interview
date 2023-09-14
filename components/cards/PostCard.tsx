@@ -1,4 +1,5 @@
 import { formatDateString } from "@/lib/utils"
+import Image from "next/image"
 
 interface Props {
     id: string,
@@ -6,7 +7,7 @@ interface Props {
     title: string,
     content: string,
     author: {
-        name: string,
+        username: string,
         image: string,
         id: string
     },
@@ -28,14 +29,25 @@ export default function PostCard( {
     createdAt,
     comments,
 }: Props ) {
+
     return (
         <article className="postcard">
-            <h1>{author.image}</h1>
-            <div>
-                <h1>{title}</h1>
+            <div className="flex flex-start items-center gap-5">
+                <Image
+                    src={author.image}
+                    width={50}
+                    height={50}
+                    alt="author profile image"
+                    className="rounded-xl"
+                />
+                <h1 className="text-xl font-extrabold">{author.username}</h1>
             </div>
-            <p>{content}</p>
-            <p>{formatDateString( createdAt )}</p>
+            <h1 className="text-lg font-bold">{title}</h1>
+            <p className="ml-10">{content}</p>
+            <div className="flex justify-between">
+                <p>10 comments</p>
+                <p>{formatDateString( createdAt )}</p>
+            </div>
         </article>
     )
 }

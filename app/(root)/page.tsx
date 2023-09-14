@@ -23,7 +23,7 @@ export default async function Page() {
                             currentUserId={user?.id || ""}
                             title={post.title}
                             content={post.post}
-                            author={post.author.name}
+                            author={post.author}
                             createdAt={post.createdAt}
                             comments={post.children}
                         />

@@ -3,7 +3,6 @@
 import { connectToDB } from "../mongoose"
 import Post from "../models/post.model"
 import User from "../models/user.model";
-import Comment from "../models/comment.model";
 import { revalidatePath } from "next/cache";
 
 interface Params {
@@ -45,21 +44,25 @@ export async function fetchPosts( pageNumber = 1, pageSize = 20 ) {
     const skipAmount = ( pageNumber - 1 ) * pageSize;
 
     // get all posts
-    const postsQuery = Post.find()
+    const postsQuery = Post
+        .find( { parentId: { $in: [null, undefined] } } )
         .sort( { createdAt: 'desc' } )
         .skip( skipAmount )
         .limit( pageSize )
-        .populate( { path: 'author', model: User } )
-    // .populate( {
-    //     path: 'children',
-    //     populate: {
-    //         path: 'author',
-    //         model: User,
-    //         select: '_id name parentId image'
-    //     }
-    // } )
+        .populate( {
+            path: 'author',
+            model: User
+        } )
+        .populate( {
+            path: 'children',
+            populate: {
+                path: 'author',
+                model: User,
+                select: '_id name parentId image'
+            }
+        } )
 
-    const totalPostsCount = await Post.countDocuments()
+    const totalPostsCount = await Post.countDocuments( { parentId: { $in: [null, undefined] } } )
 
     const posts = await postsQuery.exec();
 
