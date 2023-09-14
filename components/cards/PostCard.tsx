@@ -1,6 +1,7 @@
 import { formatDateString } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import DeletePost from "../forms/DeletePost"
 
 interface Props {
     id: string,
@@ -45,6 +46,11 @@ export default function PostCard( {
                         />
                         <h1 className="text-lg font-bold">{author.username}</h1>
                     </div>
+                    <DeletePost
+                        postId={id}
+                        currentUserId={currentUserId}
+                        authorId={author.id}
+                    />
                 </div>
                 <h1 className="text-xl font-extrabold">{title}</h1>
                 <p className="ml-10 text-base">{content}</p>
