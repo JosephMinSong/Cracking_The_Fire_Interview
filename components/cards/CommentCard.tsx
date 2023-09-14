@@ -17,14 +17,13 @@ interface Props {
         author: {
             image: string
         }
-    }[]
+    }[],
 }
 
 
-export default function PostCard( {
+export default function CommentCard( {
     id,
     currentUserId,
-    title,
     content,
     author,
     createdAt,
@@ -46,7 +45,6 @@ export default function PostCard( {
                         <h1 className="text-lg font-bold">{author.username}</h1>
                     </div>
                 </div>
-                <h1 className="text-xl font-extrabold">{title}</h1>
                 <p className="ml-10 text-base">{content}</p>
                 <div className="flex justify-between text-sm md:text-base">
                     <p>{comments.length} {comments.length == 1 ? "comment" : "comments"}</p>
