@@ -19,7 +19,7 @@ export default function NavBar() {
         <>
             {/* FOR TABLETS AND DESKTOP */}
             <div className="hidden md:block">
-                <nav className="navbar-container flex justify-between items-center mr-5 ml-2 my-2 lg:mx-52">
+                <nav className="navbar-container flex justify-between items-center mr-5 ml-2 my-2 2xl:mx-52">
                     <div className="flex items-center justify-center">
                         <Image
                             src='/company-logo.png'
