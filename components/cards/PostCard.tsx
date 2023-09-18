@@ -37,13 +37,15 @@ export default function PostCard( {
             <article className="postcard">
                 <div className="flex justify-between">
                     <div className="flex flex-start items-center gap-5">
-                        <Image
-                            src={author.image}
-                            width={50}
-                            height={50}
-                            alt="author profile image"
-                            className="rounded-xl"
-                        />
+                        <Link href={`/profile/${author.id}`}>
+                            <Image
+                                src={author.image}
+                                width={50}
+                                height={50}
+                                alt="author profile image"
+                                className="rounded-xl"
+                            />
+                        </Link>
                         <h1 className="text-lg font-bold">{author.username}</h1>
                     </div>
                     <DeletePost
