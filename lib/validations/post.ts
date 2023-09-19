@@ -8,4 +8,5 @@ export const PostValidation = z.object( {
 
 export const CommentValidation = z.object( {
     post: z.string().nonempty().min( 3, { message: "Minimum of 3 characters long" } ),
+    accountId: z.string()
 } )
