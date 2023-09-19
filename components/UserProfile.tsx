@@ -29,15 +29,15 @@ export default function UserProfile( {
                 />
             </div>
             <div className="profile-div">
-                <h1>Username: </h1>
+                <h1 className="font-bold">Username: </h1>
                 <h1 className="text-2xl font-bold">{username}</h1>
             </div>
             <div className="profile-div">
-                <h2>Bio:</h2>
+                <h2 className="font-bold">Bio:</h2>
                 <h2>{bio}</h2>
             </div>
             <div className="profile-div">
-                <h2>Status:</h2>
+                <h2 className="font-bold">Status:</h2>
                 <h2>{status}</h2>
             </div>
             <div className="profile-buttons">
