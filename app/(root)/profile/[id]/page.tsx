@@ -1,4 +1,3 @@
-
 import UserProfile from "@/components/UserProfile"
 import { fetchUser } from "@/lib/actions/user.actions"
 import { useParams } from "next/navigation"

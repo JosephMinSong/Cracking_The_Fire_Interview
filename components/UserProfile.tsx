@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import { currentUser } from "@clerk/nextjs"
 
 interface Props {
     id: string,
@@ -17,6 +18,7 @@ export default function UserProfile( {
     status,
     bio
 }: Props ) {
+
     return (
         <main className="flex flex-col justify-center items-center gap-8">
             <div>
