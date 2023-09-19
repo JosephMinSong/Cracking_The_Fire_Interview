@@ -214,12 +214,12 @@ export default function AccountProfile( { user, btnTitle }: Props ) {
                                 </FormControl>
                                 <FormMessage />
                                 <SelectContent>
-                                    <SelectItem value="curious">I'm just curious about the process</SelectItem>
-                                    <SelectItem value="preparing">I'm preparing for the exams and interviews</SelectItem>
-                                    <SelectItem value="volunteer">I'm a volunteer firefighter</SelectItem>
-                                    <SelectItem value="probationary">I'm a probationary firefighter</SelectItem>
-                                    <SelectItem value="career">I'm a career firefighter</SelectItem>
-                                    <SelectItem value="retired">I'm a retired firefighter</SelectItem>
+                                    <SelectItem value="I'm curious about the process">I'm curious about the process</SelectItem>
+                                    <SelectItem value="I'm preparing for the exams and interviews">I'm preparing for the exams and interviews</SelectItem>
+                                    <SelectItem value="I'm a volunteer firefighter">I'm a volunteer firefighter</SelectItem>
+                                    <SelectItem value="I'm a probationary firefighter">I'm a probationary firefighter</SelectItem>
+                                    <SelectItem value="I'm a career firefighter">I'm a career firefighter</SelectItem>
+                                    <SelectItem value="I'm a retired firefighter">I'm a retired firefighter</SelectItem>
                                 </SelectContent>
                             </Select>
                         </FormItem>

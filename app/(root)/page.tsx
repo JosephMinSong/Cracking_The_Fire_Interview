@@ -7,9 +7,6 @@ export default async function Page() {
     const result = await fetchPosts( 1, 30 );
     const user = await currentUser();
 
-
-    console.log( result )
-
     return (
         <section>
             {result.posts.length === 0 ? (

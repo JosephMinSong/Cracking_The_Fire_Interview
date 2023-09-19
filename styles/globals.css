@@ -92,3 +92,21 @@ body {
     border: 0.1px solid black;
     cursor: pointer;
 }
+
+.profile-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.profile-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    background-color: rgba(251, 146, 60, 0.5);
+    padding: 1.5rem;
+    border: 1px solid grey;
+    border-radius: 2rem;
+}
