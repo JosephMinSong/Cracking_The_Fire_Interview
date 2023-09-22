@@ -1,6 +1,10 @@
-import PostCard from "@/components/cards/PostCard";
+// import PostCard from "@/components/cards/PostCard";
 import { fetchPosts } from "@/lib/actions/post.actions";
 import { currentUser } from "@clerk/nextjs";
+import dynamic from "next/dynamic";
+
+const PostCard = dynamic( () => import( '../../components/cards/PostCard' ), { ssr: false } )
+
 
 export default async function Page() {
 

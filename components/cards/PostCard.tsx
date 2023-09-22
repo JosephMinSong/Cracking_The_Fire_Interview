@@ -21,7 +21,6 @@ interface Props {
     }[]
 }
 
-
 export default function PostCard( {
     id,
     currentUserId,
@@ -58,7 +57,7 @@ export default function PostCard( {
                 <p className="ml-10 text-base">{content}</p>
                 <div className="flex justify-between text-sm md:text-base">
                     <p>{comments.length} {comments.length == 1 ? "comment" : "comments"}</p>
-                    <p>{formatDateString( createdAt )}</p>
+                    <p suppressHydrationWarning>{formatDateString( createdAt )}</p>
                 </div>
             </article>
         </Link>

@@ -32,9 +32,6 @@ export default function Leftbar() {
                         )
                     } )}
                 </SignedIn>
-                {/* <SignedOut>
-                    <h1>Sign-In or Register to get the most of Cracking the Fire Interview!</h1>
-                </SignedOut> */}
             </div>
         </section>
     )
