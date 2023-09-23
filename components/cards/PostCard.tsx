@@ -2,6 +2,7 @@ import { formatDateString } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import DeletePost from "../forms/DeletePost"
+import { Suspense } from "react"
 
 interface Props {
     id: string,
@@ -57,7 +58,7 @@ export default function PostCard( {
                 <p className="ml-10 text-base">{content}</p>
                 <div className="flex justify-between text-sm md:text-base">
                     <p>{comments.length} {comments.length == 1 ? "comment" : "comments"}</p>
-                    <p suppressHydrationWarning>{formatDateString( createdAt )}</p>
+                    <p>{formatDateString( createdAt )}</p>
                 </div>
             </article>
         </Link>
